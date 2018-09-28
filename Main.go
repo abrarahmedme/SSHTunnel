@@ -47,6 +47,7 @@ func main() {
 			ssh.PasswordCallback(Tunnel.PasswordCallback),
 			ssh.KeyboardInteractive(Tunnel.KeyboardInteractiveChallenge),
 		},
+		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
 
 	// Create the local end-point:
